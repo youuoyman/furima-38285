@@ -15,7 +15,7 @@
 
 ### Asociation
 - has_many :orders
-- has_many :exhibits 
+- has_many :items 
 
 
 
@@ -25,15 +25,13 @@
 |--------------------------|-----------|--------------------------------| 
 | item-image               | string    | null: false                    |
 | item-name                | string    | null: false                    |
-| item-info                | string    | null: false                    |
+| item-info                | text      | null: false                    |
 | item-category            | string    | null: false                    |
-| item-sales-status        | string    | null: false                    |
-| item-shipping-fee-status | string    | null: false                    |
-| item-prefecture          | string    | null: false                    |
-| item-scheduled-delivery  | string    | null: false                    |
+| status_id                | integer   | null: false                    |
+| shipping-fee_id          | integer   | null: false                    |
+| prefecture_id            | integer   | null: false                    |
+| delivery_id              | integer   | null: false                    |
 | item-price               | integer   | null: false                    |
-| add-tax-price            | string    | null: false                    |
-| profit                   | string    | null: false                    |
 | user                     | references| null: false, foreign_key: true |
 
 ### Asociation
@@ -59,7 +57,7 @@
 |-----------------|------------|-------------------------------|
 | order           | references | null: false, foreign_key: true|
 | portal-code     | string     | null: false                   |
-| prefecture      | integer    | null: false                   |
+| prefecture_id   | integer    | null: false                   |
 | city            | string     | null: false                   |
 | addresses       | string     | null: false                   |
 | building        | string     |                               |

@@ -56,11 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
-<<<<<<< Updated upstream
-end
-=======
 end
 
 gem 'active_hash'
 gem 'devise'
->>>>>>> Stashed changes

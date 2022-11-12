@@ -30,19 +30,19 @@ RSpec.describe User, type: :model do
     it 'emailは@を含まないと登録できない' do
       @user.email = 'testmail'
       @user.valid?
-      expect(@user.errors.full_messages).to include "Email is invalid"
+      expect(@user.errors.full_messages).to include 'Email is invalid'
     end
     it 'passwordが5文字以下では登録できない' do
       @user.password = '00000'
       @user.password_confirmation = '00000'
       @user.valid?
-      expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+      expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
     end
     it 'passwordが129文字以上では登録できない' do
       @user.password = Faker::Internet.password(min_length: 129)
       @user.password_confirmation = @user.password
       @user.valid?
-      expect(@user.errors.full_messages).to include "Password is too long (maximum is 128 characters)"
+      expect(@user.errors.full_messages).to include 'Password is too long (maximum is 128 characters)'
     end
   end
 end

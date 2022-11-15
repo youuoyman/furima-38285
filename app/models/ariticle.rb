@@ -6,6 +6,5 @@ class Ariticle < ApplicationRecord
  validates :title, text, presence: true
 
  #---の時保存できない
- validates :genre_id, numericality: { other_than: 1 }
-
+ validates :genre_id, numericality: { other_than: 1, item: "can't be blank"}
 end

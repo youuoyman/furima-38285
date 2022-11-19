@@ -8,9 +8,9 @@ window.addEventListener('load', function(){
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener("input", function(){
   const addTax = document.getElementById("add-tax-price");
-  addTax.innerHTML = Math.round(priceInput.value * 0.1);
+  addTax.innerHTML = Math.floor(priceInput.value * 0.1);
   const addProfit = document.getElementById("profit");
   console.log(priceInput.innerHTML);
-  addProfit.innerHTML = Math.round(priceInput.value - Math.round(priceInput.value * 0.1 ))
+  addProfit.innerHTML = Math.floor(priceInput.value - Math.floor(priceInput.value * 0.1 ))
  })
 });

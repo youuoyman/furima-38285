@@ -59,27 +59,27 @@ RSpec.describe Item, type: :model do
       it 'item_priceが300未満だと登録出来ない' do
         @item.item_price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include "Item price Price is not included in the list"
+        expect(@item.errors.full_messages).to include "Item price is out of setting range"
       end
       it 'item_priceが10000000以上だと登録出来ない' do
         @item.item_price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include "Item price Price is not included in the list"
+        expect(@item.errors.full_messages).to include "Item price is out of setting range"
       end
       it 'item_priceが全角数字だと登録出来ない' do
         @item.item_price = "00000"
         @item.valid?
-        expect(@item.errors.full_messages).to include "Item price Price is not included in the list"
+        expect(@item.errors.full_messages).to include "Item price is out of setting range"
       end
       it 'item_priceが半角英字だと登録出来ない' do
         @item.item_price = "sample"
         @item.valid?
-        expect(@item.errors.full_messages).to include "Item price Price is not included in the list"
+        expect(@item.errors.full_messages).to include "Item price Half-width number"
       end
       it 'item_priceが半角英数字混合では登録出来ない' do
         @item.item_price = "sample00000"
         @item.valid?
-        expect(@item.errors.full_messages).to include "Item price Price is not included in the list"
+        expect(@item.errors.full_messages).to include "Item price Half-width number"
       end
       it 'userが紐ついていないと登録出来ない' do
         @item.user = nil

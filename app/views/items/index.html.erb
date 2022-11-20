@@ -130,8 +130,8 @@
       <% if @items.present? %>
         <% @items.each do |item| %>
          <li class='list'>
-            <%= link_to "#" do %>
-            <div class='item-img-content'>
+            <%= link_to item_path(item.id), method: :get do %>
+             <div class='item-img-content'>
               <%= image_tag item.image, class: "item-img" if item.image.attached? %>
 
               <%# if @items.blank? %>
@@ -139,7 +139,7 @@
                   <span>Sold Out!!</span>
                 </div>
               <%# end %>
-            </div>
+             </div>
               <div class='item-info'>
                 <h3 class='item-name'>
                  <%= item.item_name %>

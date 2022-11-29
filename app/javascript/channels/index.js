@@ -6,6 +6,7 @@ channels.keys().forEach(channels)
 
 window.addEventListener('load', function(){
   const priceInput = document.getElementById("item-price");
+  if (!priceInput){ return false;}
   priceInput.addEventListener("input", function(){
   const addTax = document.getElementById("add-tax-price");
   addTax.innerHTML = Math.floor(priceInput.value * 0.1);

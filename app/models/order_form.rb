@@ -8,7 +8,7 @@ class OrderForm
     validates :item_id
     #paymentモデル
     validates :portal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }, length: { is: 8 }
-    validates :prefecture_id, numericality: { order_than: 0 }
+    validates :prefecture_id, numericality: { order_than: 1 }
     validates :city
     validates :addresses
     validates :phone_number, format: { with: /\A\d{10,11}\z/}, length: { maximum: 11}

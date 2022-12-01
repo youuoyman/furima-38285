@@ -1,5 +1,5 @@
 class OrderForm
-  include ActiveModel::Model #トークンが必要になるかも
+  include ActiveModel::Model 
   attr_accessor :portal_code, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token
 
   with_options presence: true do

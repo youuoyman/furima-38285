@@ -63,6 +63,16 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include  "Phone number is too long (maximum is 11 characters)"
       end
+      it 'phone_numberが9桁以下では購入出来ないこと' do
+        @order_form.phone_number = "090123456"
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include "Phone number is invalid"
+      end
+      it 'phone_numberに半角数字以外が含まれているとき購入できない' do
+        @order_form.phone_number = "aaaaaaaa"
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include "Phone number is invalid"
+      end
       it 'user_idが空では購入出来ない' do
         @order_form.user_id = nil
         @order_form.valid?

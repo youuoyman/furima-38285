@@ -40,7 +40,7 @@ RSpec.describe OrderForm, type: :model do
       end
       it 'prefecture_idが1以外でないと購入出来ない' do
         @order_form.prefecture_id = 1
-        @oreder_form.valid?
+        @order_form.valid?
         expect(@order_form.errors.full_messages).to include "Prefecture can't be blank"
       end
       it 'cityが空では購入出来ないこと' do
